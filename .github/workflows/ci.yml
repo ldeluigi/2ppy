@@ -76,7 +76,7 @@ jobs:
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
       - name: Upload artifacts
         if: ${{ matrix.package }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.artifact.outputs.artifact-name }}
           path: |
@@ -85,7 +85,7 @@ jobs:
             LICENSE
       - name: Upload test install script to artifact
         if: ${{ matrix.package }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-install-script
           path: test/post_install_test.py
